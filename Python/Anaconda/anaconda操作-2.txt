@@ -1,0 +1,24 @@
+
+1、解决spyder中自动补全 TensorFlow的问题
+		Spyder -> Tools -> Preference -> IPython console -> Advanced Settings -> Greedy completion -> Use the greedy completer 前面 划对勾
+																			  -> Autocall -> 选择 Full
+																			  
+
+		然后，在Python的安装目录中找到 module_completion.py 文件，
+		在 mods 变量中添加“tensorflow”,保存文件，
+		删除 module_completion.pyc 文件，使得修改后的 module_completion.py 文件生效。
+
+		重启spyder。
+
+		ref：http://blog.csdn.net/liyuefeilong/article/details/47957319
+
+
+
+2、解决spyder导入失败的问题 to 解决spyder导入"tensorflow"失败的问题
+
+		不要直接打开 spyder，
+		而是从 anaconda -> home ->Applicatoins on -> tensorflow -> python 点击lunch
+
+
+		Spyder -> Tools -> Python interpreter -> Python interpreter -> Use the fllowing Python interpreter: 
+		在这里选择 虚拟环境 “tensorflow” 下的 Python.exe

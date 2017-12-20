@@ -1,0 +1,167 @@
+以下代码都是在 spyder(python 3.5) 下进行的，经测试有效
+
+#========================================================
+Python 自己构造一个多维矩阵（array），需要使用 numpy 模块
+	import numpy as np
+	aa = np.array([2,2,33])
+	print(aa)
+
+	bb = np.array([[2,2,33],[1,1,1]])
+	print(bb)
+	np.linalg.matrix_rank(bb)
+
+
+
+#========================================================
+Python 自己构造一个多维表单（list）
+	aa = [[2, 3 ,3],[3,3,5]] # aa为一个2*3大小的 list，注意里面的逗号
+	print(aa)
+
+
+#========================================================
+Python 一个语句太长，换行的话 用 \
+	a = 3
+	b = 2
+	c = a +\
+		b
+	print(c)
+	注：在{} [] () 环境中，则不需要 使用 \  
+
+
+#========================================================
+Python 数组基本用法，数组长度：len(a) ， 
+	a = [1 ,2 ,3 ]
+	print('a 的长度是：', len(a))
+	print('a中的值分别是：', a)
+	for i  in range(0 , len(a)):
+		print('第' ,i ,'个值是：' , a[i])
+	# 这里数组的指标还可以是 -1，既是循环处理指标集
+	print('从后往前提取a 的值: \n')
+	for i  in range( -len(a),0 ):
+		print('倒数第' , -i ,'个值是：',a[i])
+
+	想看一下数组的具体形式，则可以使用  
+	data.shape 		输出数组的形式
+	eg:
+	import numpy as np 
+	data = np.random.random((4,4))
+	print(data.shape)  # 输出应该为（4,4）
+
+#========================================================
+Python 基本导入 模块  的命令： import 
+	import math            #导入数学工具模块
+	testabs = math.fabs(-3)
+	print('the value of testabs is:',testabs)
+ 
+ 
+	只导入模块中的某一部分函数   from * import  *  
+		from math import fabs
+		testabs = fabs(-3)
+		print('the value of testabs is:',testabs)
+ 
+	注意这两种导入方式中，使用导入的函数的使用方式的不同，全导入的时候要使用 math.fabs
+	只导入部分的时候，直接使用 fabs
+
+	
+#========================================================
+Python 清除所有变量（包括导入的包）
+   在IPython console 中输入 reset
+   之后会出现 Once deleted, variables cannot be recovered. Proceed (y/[n])?
+   再输入 y
+   即可
+
+   
+#========================================================
+Python 注释单条语句，在最前面加    # (快捷方式：ctrl + 1)
+	# 待注释的语句
+
+Python 注释多条语句，在最前和最后面加    """   """
+
+	"""
+	待注释的语句1
+	待注释的语句2
+	...
+	"""
+
+	
+#========================================================
+Python 导入工具包，使用 import 注意：1、每次使用，都要导入，类似 C++中 的 include 头文件
+									2、导入之后，每次输入之后，输入变量之后，再输入 . 用 Tab 快速调用函数 
+	import math
+	a = math.sqrt(0.9)
+	print(a)
+	
+	
+#========================================================	
+Python print 函数的使用，显示数字，或者变量，可以直接当做变量输入，字符串需要加上单引号  ''
+
+	print(3)
+	a = 3
+	print(a)
+	print('hello world \n')  # \n 表示换行
+	
+Python for 循环，注意这里与matlab 区别较大，1、这里不需要 end 2、这里以空格控制语句 
+							3、这里都是语言形式的描述多一些  4、注意这里最后的冒号结尾
+						    5、这里不取range中的最后一个值
+	for i in range(1,3):
+		i = i+1
+		print(i)
+
+		
+		
+#========================================================
+# python 中的range也可以这样使用
+
+import numpy as np
+print('# 这里表示 i = 0,1,2,3,4')
+a = np.zeros(5)  # 产生一个5行一列的全零向量
+print('从这里看出来python是列优先的，a 的shape是：',a.shape)
+for i in range(5):  # 这里表示i = 0,1,2,3,4
+    print(a[i])
+
+# range 的也可以这样用，缺省第一个指标
+print('# range 的也可以这样用，缺省第一个指标')
+
+for _ in range(5):
+    print(a[1])
+		
+#========================================================
+
+print('# numpy 中的特殊矩阵')
+import numpy as np
+
+print('生成一个 3*3 的单位矩阵 aa')
+aa = np.eye(3)
+print('aa 的形状 aa.shape 是：' , aa.shape)
+
+print('aa 的第一行 aa[0, :] 是：' , aa[0, :])
+
+print('aa 的第一列 aa[: , 0] 是：' , aa[: , 0])
+
+print('从这里也可以看出Python是行优先的')
+
+print('将aa 变换为一个 9*1 的向量：aa = aa.reshape(9,1)',aa.reshape(9,1))
+
+print('求矩阵的秩：np.linalg.matrix_rank(aa):' , np.linalg.matrix_rank(aa))
+
+
+bb= np.random.normal(size =(3,4))
+print('生成一个矩阵，里面的元素都是随机数：bb= np.random.normal(3,4)' , bb)
+print('矩阵的转置：bb.T',bb.T )
+
+
+#========================================================
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		

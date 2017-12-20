@@ -1,0 +1,41 @@
+1、解决anaconda打不开的方法
+
+		1. 环境
+
+		　　win7 64位，Anaconda版本：Anaconda3-4.2.0-Windows-x86_64
+
+		2. 出现的问题
+
+		  Anaconda Navigator 打不开
+		  
+		 3. 尝试解决办法
+			A、重装anaconda，
+			  Student：老师，重装了还是打不开啊！
+			  matrix:恩，那是你卸载不完全导致的。
+			B、百度 “anaconda 打不开”找到一个解决方法：
+					针对Anaconda安装没有异常,但是打开Anaconda Navigator没有反应
+					创建py文件命名为sitecustomize.py
+					写入以下代码
+					
+					#file name:  sitecustomize.py  
+					import sys    
+					sys.setdefaultencoding('utf-8')  
+					
+					放入Anaconda2目录下\Lib\site-packages文件夹中即可
+
+					ref:http://blog.csdn.net/krzover/article/details/70800527
+			  Student:老师，还是不行啊！
+			  matrix：恩，要不换个方法。
+		   C、更新 navigator
+					命令行输入 
+					conda install -c anaconda anaconda-navigator=1.6.2
+					
+					ref：http://blog.csdn.net/k3v1n1990s/article/details/72975528
+			  student：老师，这次终于搞定了呢。为什么呢？
+			  matrix：恩，这个我也不清楚唉，等我研究一下再告诉你。
+
+		PS：找答案的时候还找到了一个解决  Spyder打不开的方法，测试有效：
+
+		方法：C:\用户\Administrator.spyder 删除这个.spyder文件夹就好了，然后启动spyder，就好了
+		ref：http://blog.csdn.net/u011361880/article/details/76572973
+
